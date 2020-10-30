@@ -70,6 +70,14 @@ $listOfTasks = $list->getTasks();
                         <button class="btn btn-sm btn-outline-danger">Delete</button>
                     </form>
                 </td>
+                <td>
+                    <form style="display: inline-block" action="App/Actions/update.php" method="post">
+                        <input type="hidden" name="id" value="<?php echo $item->id?>">
+                        <?php $_SESSION['taskid']=$item->id?>
+                        <button class="btn btn-sm btn-outline-success">Update</button>
+                    </form>
+                </td>
+
 
             </tr>
         <?php endif; ?>

@@ -35,6 +35,14 @@ class ListRepository{
         return $stmt->fetch(PDO::FETCH_OBJ);
     }
 
+    public function update(array $newInfo)
+    {
+        $stmt = $this->db->query("UPDATE {$this->table} SET task=?, PM={$newInfo['PM']}, 
+                 performer=?, deadline={$newInfo['deadline']}
+                 WHERE id = ? ", [$newInfo['task'], $newInfo['performer'], $newInfo['id']]);
+        return $stmt->fetch(PDO::FETCH_OBJ);
+    }
+
 
     public function findlinks(int $id)
     {
@@ -52,7 +60,6 @@ class ListRepository{
 
     public function create(array $TaskInfo)
     {
-        echo "ama here  ";
         $sql = "INSERT INTO {$this->table} (task, PM, performer, deadline, completed)
                 VALUES (:task, :PM, :performer, :deadline, :completed)";
 
@@ -64,11 +71,9 @@ class ListRepository{
             ':completed' => 0
 
         ];
-        echo "ama here  ";
         $this->db->query($sql, $data);
 
         $createdTaskId = $this->db->getLastInsertedId();
-        echo "ama here  ";
         return $createdTaskId;
     }
 

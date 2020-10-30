@@ -10,5 +10,5 @@ $TaskRep = new ListRepository(DB::getInstance());
 if($_POST['id']) {
     $TaskRep->remove($_POST['id']);
 }
-header("Location: ");
+header("Location: http://php-docker.local:9070/list.php ");
 ?>

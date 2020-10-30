@@ -11,7 +11,7 @@ if (isset($_GET['action'])){
     if ($action == 'save-task') {
         $TaskRep = new ListRepository(DB::getInstance());
         $TaskRep->create($_POST);
-        header("Location: http://php-docker.local:9070");
+        header("Location: http://php-docker.local:9070/list.php");
         exit();
     }
 }
