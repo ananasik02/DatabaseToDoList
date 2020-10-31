@@ -2,16 +2,26 @@
 session_start();
 use App\DB\DB;
 use App\Repositories\ListRepository;
+use App\Repositories\UsersRepository;
 use App\TaskList;
+use App\UserList;
+require __DIR__ . '/vendor/autoload.php';
+use Carbon\Carbon;
 
 include  $_SERVER['DOCUMENT_ROOT'] . '/App/Repositories/ListRepository.php';
+include  $_SERVER['DOCUMENT_ROOT'] . '/App/Repositories/UsersRepository.php';
 include  $_SERVER['DOCUMENT_ROOT'] . '/App/DB/DB.php';
 include  $_SERVER['DOCUMENT_ROOT'] . '/App/TaskList.php';
+include  $_SERVER['DOCUMENT_ROOT'] . '/App/UserList.php';
 
 $TaskRep = new ListRepository(DB::getInstance());
 $list = new TaskList($TaskRep);
 
 $listOfTasks = $list->getTasks();
+
+$today=date("d/m/y");
+$now = Carbon::now();
+echo "$now\n";
 
 ?>
 
@@ -40,6 +50,7 @@ $listOfTasks = $list->getTasks();
             <th>PM</th>
             <th>Performer</th>
             <th>Deadline</th>
+            <th>Time Left</th>
             <th>Done</th>
         </tr>
         </thead>
@@ -52,6 +63,7 @@ $listOfTasks = $list->getTasks();
                 <td><?php echo $item->PM ?></td>
                 <td><?php echo $item->performer ?></td>
                 <td><?php echo $item->deadline ?></td>
+                <td><?php echo strtotime($item->deadline)-strtotime($today) ?></td>
                 <td>
                     <?php if($item->completed == 1) { ?>
                         <p>Yes</p>

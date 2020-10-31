@@ -3,7 +3,9 @@
 namespace App\Repositories;
 
 use App\DB\DB;
+use App\User;
 use PDO;
+include  $_SERVER['DOCUMENT_ROOT'] . '/App/User.php';
 
 class UsersRepository
 {
@@ -13,6 +15,13 @@ class UsersRepository
     public function __construct(DB $db)
     {
         $this->db = $db;
+    }
+
+    public function all(){
+        $stmt = $this->db->query("SELECT * FROM {$this->table}");
+        $UserData = $stmt->fetchAll();
+        $UsersCollection = $this->mapUsers($UserData) ;
+        return $UsersCollection;
     }
 
     public function find($login, $password)
@@ -38,6 +47,18 @@ class UsersRepository
         $createdUserId = $this->db->getLastInsertedId();
 
         return $createdUserId;
+    }
+
+    private function mapUsers(array $users): array
+    {
+        $UsersCollection = [];
+        foreach ($users as $user) {
+            $user['login'] = html_entity_decode($user['login']);
+            $user['password'] = html_entity_decode($user['password']);
+            $UsersCollection[] = new User($user);
+        }
+
+        return $UsersCollection;
     }
 
 }

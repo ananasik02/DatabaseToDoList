@@ -9,7 +9,7 @@ class User{
 
     function __construct(array  $userData)
     {
-        $this->login = isset($data['login']) ? $data['login'] : '';
-        $this->password = isset($data['password']) ? $data['password'] : '';
+        $this->login = isset($userData['login']) ? $userData['login'] : '';
+        $this->password = isset($userData['password']) ? $userData['password'] : '';
     }
 }

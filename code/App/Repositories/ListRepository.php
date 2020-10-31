@@ -26,7 +26,9 @@ class ListRepository{
     public function find(int $id)
     {
         $stmt = $this->db->query("SELECT * FROM {$this->table} WHERE id = ? LIMIT 1", [$id]);
-        return $stmt->fetch(PDO::FETCH_OBJ);
+        $oneTask = $stmt->fetchAll();
+        $findTask = $this->mapOneTask($oneTask);
+        return $findTask;
     }
 
     public function MarkDone(int $id)
@@ -95,5 +97,15 @@ class ListRepository{
         }
 
         return $taskCollection;
+    }
+    private function mapOneTask( array $OneTasks)
+    {
+        $task['task'] = html_entity_decode($OneTasks[0]['task']);
+        $task['PM'] = intval($OneTasks[0]['PM']);
+        $task['performer'] = intval($OneTasks[0]['performer']);
+        $task['deadline'] = html_entity_decode($OneTasks[0]['deadline']);
+        $task['completed'] = $OneTasks[0]['completed'];
+        $findtask = new Task($task);
+        return $findtask;
     }
 }

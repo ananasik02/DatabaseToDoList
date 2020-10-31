@@ -12,7 +12,7 @@ include  $_SERVER['DOCUMENT_ROOT'] . '/App/Repositories/ListRepository.php';
 include  $_SERVER['DOCUMENT_ROOT'] . '/App/DB/DB.php';
 include  $_SERVER['DOCUMENT_ROOT'] . '/App/TaskList.php';
 include  $_SERVER['DOCUMENT_ROOT'] . '/App/Repositories/UsersRepository.php';
-include  $_SERVER['DOCUMENT_ROOT'] . '/App/User.php';
+//include  $_SERVER['DOCUMENT_ROOT'] . '/App/User.php';
 
 $UsersRep = new UsersRepository(DB::getInstance());
 

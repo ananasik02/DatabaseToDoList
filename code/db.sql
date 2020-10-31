@@ -7,7 +7,8 @@ USE tasklist;
 
 CREATE TABLE users
 (
-    login TEXT NOT NULL PRIMARY KEY,
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    login TEXT NOT NULL,
     password TEXT NOT NULL
 ) ENGINE = InnoDB;
 
@@ -21,10 +22,10 @@ CREATE TABLE tasks
     deadline TEXT NOT NULL,
     completed INT UNSIGNED,
     INDEX performer_name (performer),
-    FOREIGN KEY (performer) REFERENCES users(login)
+    FOREIGN KEY (performer) REFERENCES users(id)
         ON DELETE CASCADE,
     INDEX PM_name (PM),
-    FOREIGN KEY (PM) REFERENCES users(login)
+    FOREIGN KEY (PM) REFERENCES users(id)
         ON DELETE CASCADE
 ) ENGINE = InnoDB;
 INSERT INTO users(login, password) VALUES
@@ -45,15 +46,15 @@ INSERT INTO tasks (task, PM, performer, deadline, completed)
 VALUES
 (
     'Make a todoList with database',
-    'Nazar',
-    'Nadia',
+    2,
+    1,
     '2020-13-10',
     1
 ),
 (
     'Do a lab',
-    'Andriy',
-    'Nadia',
+    3,
+    2,
     '2020-15-10',
     0
 );

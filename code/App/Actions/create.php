@@ -2,9 +2,18 @@
 namespace App;
 use App\Repositories\ListRepository;
 use App\DB\DB;
-include  getcwd() . '/../Repositories/ListRepository.php';
-include  getcwd() . '/../DB/DB.php';
-include  getcwd() . '/../TaskList.php';
+use App\Repositories\UsersRepository;
+use App\UserList;
+
+include  $_SERVER['DOCUMENT_ROOT'] . '/App/Repositories/ListRepository.php';
+include  $_SERVER['DOCUMENT_ROOT'] . '/App/Repositories/UsersRepository.php';
+include  $_SERVER['DOCUMENT_ROOT'] . '/App/DB/DB.php';
+include  $_SERVER['DOCUMENT_ROOT'] . '/App/TaskList.php';
+include  $_SERVER['DOCUMENT_ROOT'] . '/App/UserList.php';
+
+$UserRep = new UsersRepository(DB::getInstance());
+$users = new UserList($UserRep);
+$listOfUsers = $users->getUsers();
 
 if (isset($_GET['action'])){
     $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
@@ -46,11 +55,23 @@ if (isset($_GET['action'])){
                             </div>
                             <div class="form-group">
                                 <label for="performer">PM:</label>
-                                <input class="form-control" placeholder="Enter performer" id="PM" name="PM" required></input>
+<!--                                <input class="form-control" placeholder="Enter performer" id="PM" name="PM" required></input>-->
+                                <p><select size="3" multiple id="PM" name="PM" >
+                                        <option disabled>Enter PM</option>
+                                        <?php foreach ($listOfUsers as $user) : ?>
+                                        <option value="<?php echo $user->login ?>"> <?php  echo $user->login  ?></option>
+                                        <?php endforeach; ?>
+                                    </select></p>
                             </div>
                             <div class="form-group">
                                 <label for="performer">Performer:</label>
-                                <input class="form-control" placeholder="Enter performer" id="performer" name="performer" required></input>
+<!--                                <input class="form-control" placeholder="Enter performer" id="performer" name="performer" required></input>-->
+                                <p><select size="3" multiple id="performer" name="performer" >
+                                        <option disabled>Enter performer</option>
+                                        <?php foreach ($listOfUsers as $user) : ?>
+                                            <option value="<?php echo $user->login ?>"> <?php  echo $user->login  ?></option>
+                                        <?php endforeach; ?>
+                                    </select></p>
                             </div>
                             <div class="form-group">
                                 <label for="price">Deadline:</label>

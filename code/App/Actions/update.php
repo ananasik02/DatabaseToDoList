@@ -4,16 +4,23 @@ namespace App;
 
 use App\Repositories\ListRepository;
 use App\DB\DB;
+use App\Repositories\UsersRepository;
+use App\UserList;
 
 include getcwd() . '/../Repositories/ListRepository.php';
 include getcwd() . '/../DB/DB.php';
 include getcwd() . '/../TaskList.php';
+include  $_SERVER['DOCUMENT_ROOT'] . '/App/Repositories/UsersRepository.php';
+include  $_SERVER['DOCUMENT_ROOT'] . '/App/UserList.php';
+
+$UserRep = new UsersRepository(DB::getInstance());
+$users = new UserList($UserRep);
+$listOfUsers = $users->getUsers();
 
 $task_id=$_POST['id'];
-$task_description=$_POST['task'];
-$task_PM=$_POST['PM'];
-$task_performer=$_POST['performer'];
-$task_deadline=$_POST['deadline'];
+$TaskRep = new ListRepository(DB::getInstance());
+$currentTask=$TaskRep->find($task_id);
+
 
 if (isset($_GET['action'])) {
     $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
@@ -66,21 +73,30 @@ if (isset($_GET['action'])) {
                             </div>
                             <div class="form-group">
                                 <label for="task">Task:</label>
-                                <input class="form-control" placeholder="Enter task" id="task" name="task" required value="<?php echo $task_description ?>">
+                                <input class="form-control" placeholder="Enter task" id="task" name="task"  value="<?php echo $currentTask->task  ?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="performer">PM:</label>
-                                <input class="form-control" placeholder="Enter performer" id="PM" name="PM" required value="<?php echo $task_PM ?>"></input>
+                                <p><select size="3" multiple id="PM" name="PM" value="<?php echo $currentTask->PM  ?>">
+                                        <option disabled>Enter PM</option>
+                                        <?php foreach ($listOfUsers as $user) : ?>
+                                            <option value="<?php echo $user->login ?>"> <?php  echo $user->login  ?></option>
+                                        <?php endforeach; ?>
+                                    </select></p>
                             </div>
                             <div class="form-group">
                                 <label for="performer">Performer:</label>
-                                <input class="form-control" placeholder="Enter performer" id="performer"
-                                       name="performer" required value="<?php echo $task_performer ?>"></input>
+                                <p><select size="3" multiple id="performer" name="performer"  value="<?php echo $currentTask->performer  ?>">
+                                        <option disabled>Enter performer</option>
+                                        <?php foreach ($listOfUsers as $user) : ?>
+                                            <option value="<?php echo $user->login ?>"> <?php  echo $user->login  ?></option>
+                                        <?php endforeach; ?>
+                                    </select></p>
                             </div>
                             <div class="form-group">
                                 <label for="price">Deadline:</label>
                                 <input type="date" class="form-control" placeholder="Enter deadline" id="deadline"
-                                       name="deadline" required value="<?php echo $task_deadline ?>">
+                                       name="deadline" required value="<?php echo $currentTask->deadline ?>">
                             </div>
                             <button type="submit" class="btn btn-primary">Update</button>
                         </form>
