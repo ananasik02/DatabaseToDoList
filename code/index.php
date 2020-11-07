@@ -1,36 +1,31 @@
 <?php
 session_start();
+require $_SERVER['DOCUMENT_ROOT'] . "/App/Router.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/App/Request.php";
+$router = Router::load('routes.php');
+$pageName = $router->direct('login');
+
 require 'vendor/autoload.php';
-$pageName = 'login.php';
-$requestedPage = $_SERVER['REQUEST_URI'];
+
 if (isset($_GET['action'])) {
     $requestedPage = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
     if ($requestedPage == 'enter-user') {
-        $pageName = 'list.php';
-    }
-    elseif($requestedPage == 'create-task'  || $requestedPage == 'save-task' ){
-        $pageName = 'create.php';
-    }elseif($requestedPage == 'update-task' || $requestedPage == 'save-updated-task'){
-        $pageName = 'update.php';
-    }
-    elseif($requestedPage == 'check-enter-user'){
-        $pageName = 'login.php';
-    }
-    elseif($requestedPage == 'check-box'){
-        $pageName = 'checkbox-form.php';
-    }
-    elseif($requestedPage == 'delete-task'){
-        $pageName = 'delete.php';
+        $pageName = $router->direct('list');
+    }elseif($requestedPage == 'create-task'  || $requestedPage == 'save-task'){
+        $pageName = $router->direct('create');
+    }elseif ($requestedPage == 'update-task' || $requestedPage == 'save-updated-task'){
+        $pageName = $router->direct('update');
+    }elseif ($requestedPage == 'check-enter-user'){
+        $pageName = $router->direct('login');
+    }elseif($requestedPage == 'check-box'){
+        $pageName = $router->direct('check-box');
+    } elseif($requestedPage == 'delete-task'){
+        $pageName = $router->direct('delete');
     }
     elseif($requestedPage == 'signup-user' || $requestedPage='create-user'){
-        $pageName = 'signup.php';
-    }else {
-        $pageName = $requestedPage;
+        $pageName = $router->direct('signup');
     }
 }
-
-$pagePath = $_SERVER['DOCUMENT_ROOT'] . "/App/Actions/$pageName";
+$pagePath = $_SERVER['DOCUMENT_ROOT'] . $pageName;
 include $pagePath;
 
-
-?>

@@ -22,7 +22,7 @@ services:
   db:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: ' '
+      MYSQL_ROOT_PASSWORD: Vitalik*love23
       MYSQL_DATABASE: tasklist
     ports:
       - "3333:3306"

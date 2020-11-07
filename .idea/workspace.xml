@@ -2,30 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49e2f891-19ce-49b1-b5e6-5ec82facc5e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SimplList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SimplList.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/App/Request.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/App/Router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/App/Actions/checkbox-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/App/Actions/checkbox-form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/App/Actions/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/App/Actions/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/App/Actions/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/App/Actions/delete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/App/Actions/list.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/App/Actions/list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/App/Actions/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/App/Actions/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/App/Actions/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/App/Actions/signup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/App/Actions/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/App/Actions/update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/App/Repositories/ListRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/App/Repositories/ListRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/App/Repositories/UsersRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/App/Repositories/UsersRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/App/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/App/Task.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/code/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/code/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/code/db.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/partials/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/partials/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/partials/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/partials/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/partials/task_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/partials/task_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/partials/user_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/partials/user_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/partials/view_tasklist.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/partials/view_tasklist.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +98,7 @@
       <workItem from="1604495270581" duration="19751000" />
       <workItem from="1604566681805" duration="12179000" />
       <workItem from="1604601282658" duration="24541000" />
-      <workItem from="1604684006965" duration="5645000" />
+      <workItem from="1604684006965" duration="11092000" />
     </task>
     <servers />
   </component>
