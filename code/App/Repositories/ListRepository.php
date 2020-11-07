@@ -16,8 +16,8 @@ class ListRepository{
         $this->db = $db;
     }
 
-    public function all(){
-        $stmt = $this->db->query("SELECT * FROM {$this->table}");
+    public function all($userId){
+        $stmt = $this->db->query("SELECT * FROM {$this->table} WHERE performer = {$userId} || PM = ? ", [$userId]);
         $tasksData = $stmt->fetchAll();
         $tasksCollection = $this->mapTasks($tasksData) ;
         return $tasksCollection;
@@ -39,11 +39,22 @@ class ListRepository{
 
     public function update(array $newInfo)
     {
-        $stmt = $this->db->query("UPDATE {$this->table} SET task=?, PM={$newInfo['PM']}, 
-                 performer=?, deadline={$newInfo['deadline']}
-                 WHERE id = ? ", [$newInfo['task'], $newInfo['performer'], $newInfo['id']]);
-        return $stmt->fetch(PDO::FETCH_OBJ);
+        $sql = "UPDATE {$this->table} SET task = :task, PM = :PM,
+                 performer = :performer, deadline = :deadline
+                WHERE id={$newInfo['id']}";
+
+        $data = [
+            ':task' => htmlentities($newInfo['task']),
+            ':PM' => $newInfo['PM'],
+            ':performer' => $newInfo['performer'],
+            ':deadline' => htmlentities($newInfo['deadline'])
+
+        ];
+        $this->db->query($sql, $data);
+        //echo "I am here";
+        return $newInfo['id'];
     }
+
 
 
     public function findlinks(int $id)

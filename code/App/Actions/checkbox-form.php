@@ -2,13 +2,10 @@
 
 use App\Repositories\ListRepository;
 use App\DB\DB;
-include  $_SERVER['DOCUMENT_ROOT'] . '/App/Repositories/ListRepository.php';
-include  $_SERVER['DOCUMENT_ROOT'] . '/App/DB/DB.php';
 
 $TaskRep = new ListRepository(DB::getInstance());
-$TaskRep->MarkDone($_POST['formSubmit']);
+$TaskRep->MarkDone($_POST['done']);
 
-header("Location: http://php-docker.local:9070/list.php");
+header("Location: http://php-docker.local:9070/?action=enter-user");
 
-var_dump($_POST['formSubmit']);
 

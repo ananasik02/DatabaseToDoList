@@ -3,25 +3,14 @@ session_start();
 use App\DB\DB;
 use App\Repositories\ListRepository;
 use App\Repositories\UsersRepository;
-use App\TaskList;
 use App\UserList;
-require __DIR__ . '/vendor/autoload.php';
-use Carbon\Carbon;
+use App\Task;
 
-include  $_SERVER['DOCUMENT_ROOT'] . '/App/Repositories/ListRepository.php';
-include  $_SERVER['DOCUMENT_ROOT'] . '/App/Repositories/UsersRepository.php';
-include  $_SERVER['DOCUMENT_ROOT'] . '/App/DB/DB.php';
-include  $_SERVER['DOCUMENT_ROOT'] . '/App/TaskList.php';
-include  $_SERVER['DOCUMENT_ROOT'] . '/App/UserList.php';
+$taskRep = new ListRepository(DB::getInstance());
 
-$TaskRep = new ListRepository(DB::getInstance());
-$list = new TaskList($TaskRep);
+$userLogin = $_SESSION['user_login'];
+$userId=$taskRep->finduserId($userLogin);
+$listOfTasks = $taskRep->all($userId) ;
 
-$listOfTasks = $list->getTasks();
-
-$today=date("d/m/y");
-$now = Carbon::now();
-//echo "$now\n";
-
-require 'partials/view_tasklist.php';
+include $_SERVER['DOCUMENT_ROOT'] .  '/partials/view_tasklist.php';
 ?>
