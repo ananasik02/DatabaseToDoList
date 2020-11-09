@@ -9,7 +9,7 @@ require 'vendor/autoload.php';
 
 if (isset($_GET['action'])) {
     $requestedPage = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
-    if ($requestedPage == 'enter-user' || $requestedPage == 'index.php?page=2') {
+    if ($requestedPage == 'enter-user') {
         $pageName = $router->direct('list');
     }elseif($requestedPage == 'create-task'  || $requestedPage == 'save-task'){
         $pageName = $router->direct('create');

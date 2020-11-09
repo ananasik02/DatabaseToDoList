@@ -44,6 +44,13 @@
         <?php endforeach; ?>
         </tbody>
     </table>
+    <?php
+        for($page=1; $page<=$numberOfPages; $page++): ?>
+            <form style="display: inline-block;" action=" " method="post">
+                <button class="btn btn-sm btn btn-light" name="page" value="<?php echo $page?>"><?= $page ?></button>
+            </form>
+        <?php endfor;
+        ?>
 </div>
 
 <?php require 'footer.php' ?>
