@@ -11,7 +11,7 @@ $UsersRep = new UsersRepository(DB::getInstance());
 if (isset($_GET['action'])){
     $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
     if ($action == 'create-user') {
-        $password = hash('ripemd160', $_POST['password']);
+        $password = hash('MD5', $_POST['password']);
         $User =[
             'login' => $_POST['login'],
             'password' => $password

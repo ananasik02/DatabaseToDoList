@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49e2f891-19ce-49b1-b5e6-5ec82facc5e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/code/App/Request.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/code/App/Router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/App/Actions/list.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/App/Actions/list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/App/Actions/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/App/Actions/signup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/App/Repositories/ListRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/App/Repositories/ListRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/App/Repositories/UsersRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/App/Repositories/UsersRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/partials/view_tasklist.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/partials/view_tasklist.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,14 +23,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="PHPCodeSnifferBlackList">
-    <option name="filePaths">
-      <list>
-        <option value="$PROJECT_DIR$/code/index.php" />
-        <option value="$PROJECT_DIR$/code/App/Actions/list.php" />
-      </list>
-    </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -98,7 +91,8 @@
       <workItem from="1604495270581" duration="19751000" />
       <workItem from="1604566681805" duration="12179000" />
       <workItem from="1604601282658" duration="24541000" />
-      <workItem from="1604684006965" duration="11092000" />
+      <workItem from="1604684006965" duration="13823000" />
+      <workItem from="1604865566648" duration="4688000" />
     </task>
     <servers />
   </component>
@@ -146,22 +140,22 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1604576732464" />
-    <state width="1240" height="260" key="GridCell.Tab.0.bottom" timestamp="1604664151955">
+    <state width="1240" height="262" key="GridCell.Tab.0.bottom" timestamp="1604751988184">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1240" height="260" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1604664151955" />
-    <state width="1240" height="260" key="GridCell.Tab.0.center" timestamp="1604664151955">
+    <state width="1240" height="262" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1604751988184" />
+    <state width="1240" height="262" key="GridCell.Tab.0.center" timestamp="1604751988183">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1240" height="260" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1604664151955" />
-    <state width="1240" height="260" key="GridCell.Tab.0.left" timestamp="1604664151954">
+    <state width="1240" height="262" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1604751988183" />
+    <state width="1240" height="262" key="GridCell.Tab.0.left" timestamp="1604751988182">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1240" height="260" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1604664151954" />
-    <state width="1240" height="260" key="GridCell.Tab.0.right" timestamp="1604664151955">
+    <state width="1240" height="262" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1604751988182" />
+    <state width="1240" height="262" key="GridCell.Tab.0.right" timestamp="1604751988183">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1240" height="260" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1604664151955" />
+    <state width="1240" height="262" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1604751988183" />
     <state x="322" y="177" width="1022" height="737" key="SettingsEditor" timestamp="1604702272710">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>

@@ -26,7 +26,8 @@ class UsersRepository
 
     public function find($login, $password)
     {
-        $stmt = $this->db->query("SELECT * FROM {$this->table} WHERE login = ? LIMIT 1", [$login]);
+        $stmt = $this->db->query("SELECT * FROM {$this->table} WHERE login = ? 
+                              && password = ? LIMIT 1", [$login, $password]);
         return $stmt->fetch(PDO::FETCH_OBJ);
     }
 

@@ -16,11 +16,22 @@ class ListRepository{
         $this->db = $db;
     }
 
-    public function all($userId){
-        $stmt = $this->db->query("SELECT * FROM {$this->table} WHERE performer = {$userId} || PM = ? ", [$userId]);
+    public function all($userId, $startResult, $resultsNumber)
+    {
+        $sql = "SELECT * FROM {$this->table} WHERE performer = {$userId} ||
+            PM = {$userId} LIMIT {$startResult},{$resultsNumber}";
+        $stmt = $this->db->query($sql);
         $tasksData = $stmt->fetchAll();
-        $tasksCollection = $this->mapTasks($tasksData) ;
+        $tasksCollection = $this->mapTasks($tasksData);
         return $tasksCollection;
+
+    }
+
+    public function getRowsCount($userId)
+    {
+        $stmt = $this->db->query("SELECT * FROM {$this->table} WHERE performer = {$userId} || PM = ? ", [$userId]);
+        $number_of_rows = $stmt->rowCount();
+        return $number_of_rows;
     }
 
     public function find(int $id)

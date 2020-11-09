@@ -1,4 +1,4 @@
-<?php require 'header.php';  ?>
+<?php require 'header.php'; ?>
 <div class="container">
     <p>
     <form style="display: inline-block" action="?action=create-task" method="post">
@@ -19,7 +19,6 @@
         </thead>
         <tbody>
         <?php foreach ($listOfTasks as $item) : ?>
-            <?php if($item->PM==$_SESSION['user_login'] || $item->performer==$_SESSION['user_login']):?>
                 <tr>
                     <td><?php echo $item->id ?></td>
                     <td><?php echo $item->task ?></td>
@@ -41,10 +40,7 @@
                             <button class="btn btn-sm btn-outline-success">Update</button>
                         </form>
                     </td>
-
-
                 </tr>
-            <?php endif; ?>
         <?php endforeach; ?>
         </tbody>
     </table>
