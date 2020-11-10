@@ -7,7 +7,7 @@
   </component>
   <component name="PhpCodeSniffer">
     <phpcs_settings>
-      <PhpCSConfiguration beautifier_path="$PROJECT_DIR$/code/vendor/bin/phpcbf" tool_path="$PROJECT_DIR$/code/vendor/bin/phpcs" />
+      <PhpCSConfiguration beautifier_path="$PROJECT_DIR$/code/vendor/bin/phpcbf" standards="MySource;PEAR;PSR1;PSR12;PSR2;Squiz;Zend" tool_path="$PROJECT_DIR$/code/vendor/bin/phpcs" />
     </phpcs_settings>
   </component>
   <component name="PhpIncludePathManager">
@@ -29,6 +29,7 @@
       <path value="$PROJECT_DIR$/code/vendor/symfony/filesystem" />
       <path value="$PROJECT_DIR$/code/vendor/phpmd/phpmd" />
       <path value="$PROJECT_DIR$/code/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/code/vendor/symfony/var-dumper" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

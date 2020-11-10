@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49e2f891-19ce-49b1-b5e6-5ec82facc5e6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/SimplList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SimplList.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/App/Actions/list.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/App/Actions/list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/code/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/code/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/partials/view_tasklist.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/partials/view_tasklist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +44,7 @@
       <path value="$PROJECT_DIR$/code/vendor/symfony/filesystem" />
       <path value="$PROJECT_DIR$/code/vendor/phpmd/phpmd" />
       <path value="$PROJECT_DIR$/code/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/code/vendor/symfony/var-dumper" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iudeBNYAGsEHJuwseE4bHryLBa" />
@@ -60,7 +61,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="settings.php.quality.tools" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -94,6 +95,8 @@
       <workItem from="1604601282658" duration="24541000" />
       <workItem from="1604684006965" duration="13823000" />
       <workItem from="1604865566648" duration="4688000" />
+      <workItem from="1604991184938" duration="40000" />
+      <workItem from="1604999046187" duration="11887000" />
     </task>
     <servers />
   </component>
@@ -101,18 +104,22 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="579" y="214" width="824" height="691" key="#CLI_Interpreters" timestamp="1604576206114">
+    <state x="579" y="214" width="824" height="691" key="#CLI_Interpreters" timestamp="1604935637034">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="579" y="214" width="824" height="691" key="#CLI_Interpreters/72.27.1848.1053@72.27.1848.1053" timestamp="1604576206114" />
-    <state x="561" y="355" width="824" height="691" key="#Mess_Detector" timestamp="1604923338878">
+    <state x="579" y="214" width="824" height="691" key="#CLI_Interpreters/72.27.1848.1053@72.27.1848.1053" timestamp="1604935637034" />
+    <state x="753" y="396" width="472" height="342" key="#Docker" timestamp="1604935622368">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="561" y="355" width="824" height="691" key="#Mess_Detector/72.27.1848.1053@72.27.1848.1053" timestamp="1604923338878" />
-    <state x="416" y="203" width="824" height="691" key="#PHP_CodeSniffer" timestamp="1604702270106">
+    <state x="753" y="396" width="472" height="342" key="#Docker/72.27.1848.1053@72.27.1848.1053" timestamp="1604935622368" />
+    <state x="561" y="355" width="824" height="691" key="#Mess_Detector" timestamp="1604937442279">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="416" y="203" width="824" height="691" key="#PHP_CodeSniffer/72.27.1848.1053@72.27.1848.1053" timestamp="1604702270106" />
+    <state x="561" y="355" width="824" height="691" key="#Mess_Detector/72.27.1848.1053@72.27.1848.1053" timestamp="1604937442279" />
+    <state x="416" y="203" width="824" height="691" key="#PHP_CodeSniffer" timestamp="1604937366426">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="416" y="203" width="824" height="691" key="#PHP_CodeSniffer/72.27.1848.1053@72.27.1848.1053" timestamp="1604937366426" />
     <state x="734" y="458" width="187" height="182" key="#PHP_CodeSniffer_Ignored_Files" timestamp="1604663317047">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -137,30 +144,34 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="731" y="468" width="520" height="178" key="ComposerInitDialogKey/72.27.1848.1053@72.27.1848.1053" timestamp="1604576418988" />
-    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1604576732464">
+    <state x="834" y="319" width="309" height="495" key="EnvironmentVariablesDialog" timestamp="1604935633360">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1604576732464" />
-    <state width="1240" height="262" key="GridCell.Tab.0.bottom" timestamp="1604751988184">
+    <state x="834" y="319" width="309" height="495" key="EnvironmentVariablesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1604935633360" />
+    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1604991221502">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1240" height="262" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1604751988184" />
-    <state width="1240" height="262" key="GridCell.Tab.0.center" timestamp="1604751988183">
+    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1604991221502" />
+    <state width="1240" height="274" key="GridCell.Tab.0.bottom" timestamp="1605000526939">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1240" height="262" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1604751988183" />
-    <state width="1240" height="262" key="GridCell.Tab.0.left" timestamp="1604751988182">
+    <state width="1240" height="274" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1605000526939" />
+    <state width="1240" height="274" key="GridCell.Tab.0.center" timestamp="1605000526938">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1240" height="262" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1604751988182" />
-    <state width="1240" height="262" key="GridCell.Tab.0.right" timestamp="1604751988183">
+    <state width="1240" height="274" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1605000526938" />
+    <state width="1240" height="274" key="GridCell.Tab.0.left" timestamp="1605000526937">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1240" height="262" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1604751988183" />
-    <state x="322" y="177" width="1022" height="737" key="SettingsEditor" timestamp="1604702272710">
+    <state width="1240" height="274" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1605000526937" />
+    <state width="1240" height="274" key="GridCell.Tab.0.right" timestamp="1605000526939">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="322" y="177" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1604702272710" />
+    <state width="1240" height="274" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1605000526939" />
+    <state x="322" y="175" width="1022" height="737" key="SettingsEditor" timestamp="1604939942006">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="322" y="175" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1604939942006" />
     <state x="610" y="224" width="762" height="665" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1604925147158">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -173,9 +184,9 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="660" y="252" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1604927831058" />
-    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1604142308866">
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1604933046100">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1604142308866" />
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1604933046100" />
   </component>
 </project>

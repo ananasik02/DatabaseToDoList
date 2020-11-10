@@ -5,6 +5,19 @@
         <button class= "btn btn-success">Create Task</button>
     </form>
     </p>
+    <p>
+            Show
+        <form style="display: inline-block;" action=" " method="post">
+            <button class="btn btn-sm btn btn-light" name="itemsPerPage" value="5">5</button>
+        </form>
+        <form style="display: inline-block;" action=" " method="post">
+            <button class="btn btn-sm btn btn-light" name="itemsPerPage" value="10">10</button>
+        </form>
+        <form style="display: inline-block;" action=" " method="post">
+            <button class="btn btn-sm btn btn-light" name="itemsPerPage" value="all">All</button>
+        </form>
+            tasks
+    </p>
     <table class="table">
         <thead>
         <tr>
@@ -45,12 +58,14 @@
         </tbody>
     </table>
     <?php
-        for($page=1; $page<=$numberOfPages; $page++): ?>
-            <form style="display: inline-block;" action=" " method="post">
-                <button class="btn btn-sm btn btn-light" name="page" value="<?php echo $page?>"><?= $page ?></button>
-            </form>
-        <?php endfor;
-        ?>
+    for($page=1; $page <= $numberOfPages; $page++): ?>
+        <form style="display: inline-block" action="?action=set-page" method="post">
+            <button class="btn btn-sm btn-outline-success" name="page" value="<?php echo $page?>"><?= $page ?></button>
+        </form>
+
+    <?php endfor;
+
+    ?>
 </div>
 
 <?php require 'footer.php' ?>

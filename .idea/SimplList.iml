@@ -21,6 +21,7 @@
       <excludeFolder url="file://$MODULE_DIR$/code/vendor/symfony/service-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/code/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/code/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/code/vendor/symfony/var-dumper" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
