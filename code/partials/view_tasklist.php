@@ -7,13 +7,13 @@
     </p>
     <p>
             Show
-        <form style="display: inline-block;" action=" " method="post">
+        <form style="display: inline-block;" action="?action=choose-number" method="post">
             <button class="btn btn-sm btn btn-light" name="itemsPerPage" value="5">5</button>
         </form>
-        <form style="display: inline-block;" action=" " method="post">
+        <form style="display: inline-block;" action="?action=choose-number" method="post">
             <button class="btn btn-sm btn btn-light" name="itemsPerPage" value="10">10</button>
         </form>
-        <form style="display: inline-block;" action=" " method="post">
+        <form style="display: inline-block;" action="?action=choose-number" method="post">
             <button class="btn btn-sm btn btn-light" name="itemsPerPage" value="all">All</button>
         </form>
             tasks
@@ -60,7 +60,7 @@
     <?php
     for($page=1; $page <= $numberOfPages; $page++): ?>
         <form style="display: inline-block" action="?action=set-page" method="post">
-            <button class="btn btn-sm btn-outline-success" name="page" value="<?php echo $page?>"><?= $page ?></button>
+            <button class="btn btn-sm btn btn-light" name="page" value="<?php echo $page?>"><?= $page ?></button>
         </form>
 
     <?php endfor; ?>

@@ -16,7 +16,7 @@ if($requestURL == '/?page' ){
 
 if (isset($_GET['action'])) {
     $requestedPage = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
-    if ($requestedPage == 'enter-user' || $requestedPage == 'set-page' ) {
+    if ($requestedPage == 'enter-user' || $requestedPage == 'set-page' || $requestedPage == 'choose-number') {
         $pageName = $router->direct('list');
     }elseif($requestedPage == 'create-task'  || $requestedPage == 'save-task'){
         $pageName = $router->direct('create');

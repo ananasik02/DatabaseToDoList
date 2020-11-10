@@ -18,7 +18,7 @@ $numberOfItems = $taskRep->getRowsCount($userId);
 $page=1;
 $itemsPerPage = 7;
 
-$numberOfPages = ceil($numberOfItems/$itemsPerPage);
+
 $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
 $action = explode("?", $action);
 
@@ -34,16 +34,28 @@ if (isset($_GET['action'])){
             $page=1;
         }
         //echo $page;
-      header("Location: http://php-docker.local:9070/?page = {$page}");
+        $thisPageFirstResult = ($page-1) * $itemsPerPage;
+        $listOfTasks = $taskRep->all($userId, $thisPageFirstResult, $itemsPerPage) ;
+        header("Location: http://php-docker.local:9070/?page = {$page}");
 
+    }
+    if($action == 'choose-number'){
+        $_SESSION['itemsPerPage'] = $_POST['itemsPerPage'];
+        //$itemsPerPage = $_SESSION['itemsPerPage'];
     }
 }
 else{
     $page = intval($_REQUEST['page_']);
 }
 
+if(isset($_SESSION['itemsPerPage'])){
+    $itemsPerPage = $_SESSION['itemsPerPage'];
+    if($_SESSION['itemsPerPage']=='all'){
+        $itemsPerPage=$numberOfItems;
+    }
+}
+$numberOfPages = ceil($numberOfItems/$itemsPerPage);
 $thisPageFirstResult = ($page-1) * $itemsPerPage;
-
 $listOfTasks = $taskRep->all($userId, $thisPageFirstResult, $itemsPerPage) ;
 include $_SERVER['DOCUMENT_ROOT'] .  '/partials/view_tasklist.php';
 
