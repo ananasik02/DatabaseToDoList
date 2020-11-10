@@ -63,9 +63,7 @@
             <button class="btn btn-sm btn-outline-success" name="page" value="<?php echo $page?>"><?= $page ?></button>
         </form>
 
-    <?php endfor;
-
-    ?>
+    <?php endfor; ?>
 </div>
 
 <?php require 'footer.php' ?>

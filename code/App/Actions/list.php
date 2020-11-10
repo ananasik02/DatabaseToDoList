@@ -21,7 +21,6 @@ $itemsPerPage = 7;
 $numberOfPages = ceil($numberOfItems/$itemsPerPage);
 $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
 $action = explode("?", $action);
-//var_dump(intval($_REQUEST['page_']));
 
 if (isset($_GET['action'])){
     $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
@@ -35,7 +34,7 @@ if (isset($_GET['action'])){
             $page=1;
         }
         //echo $page;
-      header("Location: http://php-docker.local:9070/{$pageName}?page = {$page}");
+      header("Location: http://php-docker.local:9070/?page = {$page}");
 
     }
 }

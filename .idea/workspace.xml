@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49e2f891-19ce-49b1-b5e6-5ec82facc5e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/SimplList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SimplList.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/App/Actions/list.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/App/Actions/list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/code/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/code/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/partials/view_tasklist.php" beforeDir="false" afterPath="$PROJECT_DIR$/code/partials/view_tasklist.php" afterDir="false" />
     </list>
@@ -96,7 +92,8 @@
       <workItem from="1604684006965" duration="13823000" />
       <workItem from="1604865566648" duration="4688000" />
       <workItem from="1604991184938" duration="40000" />
-      <workItem from="1604999046187" duration="11887000" />
+      <workItem from="1604999046187" duration="12650000" />
+      <workItem from="1605024005631" duration="4074000" />
     </task>
     <servers />
   </component>

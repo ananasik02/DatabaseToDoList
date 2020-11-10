@@ -6,9 +6,16 @@ $router = Router::load('routes.php');
 $pageName = $router->direct('login');
 
 require 'vendor/autoload.php';
+
+$requestURL = ($_SERVER['REQUEST_URI']);
+$requestURL = explode('%', $requestURL);
+$requestURL = $requestURL[0];
+if($requestURL == '/?page' ){
+    $pageName = $router->direct('list');
+}
+
 if (isset($_GET['action'])) {
     $requestedPage = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
-    //echo $requestedPage;
     if ($requestedPage == 'enter-user' || $requestedPage == 'set-page' ) {
         $pageName = $router->direct('list');
     }elseif($requestedPage == 'create-task'  || $requestedPage == 'save-task'){
