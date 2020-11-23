@@ -1,7 +1,4 @@
-<?php require 'header.php';
-//echo $_SERVER['REQUEST_URI'];
-//echo $pagePath;
-?>
+<?php require 'header.php'; ?>
     <div class="container">
         <div class="card">
 
@@ -34,6 +31,9 @@
                             </form>
                         </div>
                     </div>
+                   <?php
+                       echo '<div align="center">'.$loginButton . '</div>';
+                    ?>
                 </div>
             </div>
         </div>

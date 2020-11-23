@@ -5,8 +5,12 @@ session_start();
 use App\DB\DB;
 use App\Repositories\ListRepository;
 use App\Repositories\UsersRepository;
+use App\App;
 
-$UsersRep = new UsersRepository(DB::getInstance());
+$config_path = $_SERVER['DOCUMENT_ROOT'] . "/config.php";
+App::bind('config', require $config_path);
+$db = new DB(App::get('config')['database']);
+$UsersRep = new UsersRepository($db->getInstance(App::get('config')['database']));
 
 if (isset($_GET['action'])){
     $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
@@ -18,12 +22,10 @@ if (isset($_GET['action'])){
         ];
         $UsersRep->create($User);
         $_SESSION['user_login'] = $_POST['login'];
-        header("Location: http://php-docker.local:9070/?action=enter-user");
+        header("Location: http://php-docker.com:9070/?action=enter-user");
         exit();
     }
 }
 
 require getcwd() . '/partials/user_form.php';
 ?>
-
-

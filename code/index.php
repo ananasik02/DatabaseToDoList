@@ -1,11 +1,14 @@
 <?php
 session_start();
-require $_SERVER['DOCUMENT_ROOT'] . "/App/Router.php";
-require $_SERVER['DOCUMENT_ROOT'] . "/App/Request.php";
+require 'vendor/autoload.php';
+
+phpinfo();
+
+
 $router = Router::load('routes.php');
 $pageName = $router->direct('login');
 
-require 'vendor/autoload.php';
+
 
 $requestURL = ($_SERVER['REQUEST_URI']);
 $requestURL = explode('%', $requestURL);
@@ -16,7 +19,7 @@ if($requestURL == '/?page' ){
 
 if (isset($_GET['action'])) {
     $requestedPage = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
-    if ($requestedPage == 'enter-user' || $requestedPage == 'set-page' || $requestedPage == 'choose-number') {
+    if ($requestedPage == 'enter-user' || $requestedPage == 'set-page' ) {
         $pageName = $router->direct('list');
     }elseif($requestedPage == 'create-task'  || $requestedPage == 'save-task'){
         $pageName = $router->direct('create');
@@ -30,10 +33,11 @@ if (isset($_GET['action'])) {
         $pageName = $router->direct('delete');
     }elseif($requestedPage == 'signup-user' || $requestedPage='create-user'){
         $pageName = $router->direct('signup');
+    }elseif($requestedPage == 'logout-user'){
+        $pageName = $router->direct('logout');
     }else{
         var_dump($requestedPage);
     }
 }
 $pagePath = $_SERVER['DOCUMENT_ROOT'] . $pageName;
 include $pagePath;
-

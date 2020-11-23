@@ -4,6 +4,10 @@
     <form style="display: inline-block" action="?action=create-task" method="post">
         <button class= "btn btn-success">Create Task</button>
     </form>
+    <div class="panel-heading">Welcome User</div>
+    <h3>Name <?= $_SESSION['user_login'] ?> </h3>
+    <h3><a href="../App/Actions/logout.php">Logout</h3></div>';
+    ?>
     </p>
     <p>
             Show

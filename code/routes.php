@@ -7,6 +7,7 @@ $router->define ([
     'create' => '/App/Actions/create.php',
     'delete' => '/App/Actions/delete.php',
     'update' => '/App/Actions/update.php',
-    'check-box' => '/App/Actions/checkbox-form.php'
+    'check-box' => '/App/Actions/checkbox-form.php',
+    'logout' => '/App/Actions/logout.php'
 
 ]);

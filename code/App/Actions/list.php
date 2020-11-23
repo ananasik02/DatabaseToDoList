@@ -5,11 +5,13 @@ use App\Repositories\ListRepository;
 use App\Repositories\UsersRepository;
 use App\UserList;
 use App\Task;
+use App\App;
 
-require $_SERVER['DOCUMENT_ROOT'] . "/App/Repositories/ListRepository.php";
+$config_path = $_SERVER['DOCUMENT_ROOT'] . "/config.php";
+App::bind('config', require $config_path);
+$db = new DB(App::get('config')['database']);
+$taskRep = new ListRepository($db->getInstance(App::get('config')['database']));
 
-
-$taskRep = new ListRepository(DB::getInstance());
 $pageName ='App/Actions/list.php';
 $userLogin = $_SESSION['user_login'];
 $userId=$taskRep->finduserId($userLogin);
@@ -18,7 +20,7 @@ $numberOfItems = $taskRep->getRowsCount($userId);
 $page=1;
 $itemsPerPage = 7;
 
-
+$numberOfPages = ceil($numberOfItems/$itemsPerPage);
 $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
 $action = explode("?", $action);
 
@@ -34,30 +36,15 @@ if (isset($_GET['action'])){
             $page=1;
         }
         //echo $page;
-        $thisPageFirstResult = ($page-1) * $itemsPerPage;
-        $listOfTasks = $taskRep->all($userId, $thisPageFirstResult, $itemsPerPage) ;
-        header("Location: http://php-docker.local:9070/?page = {$page}");
+        header("Location: http://php-docker.com:9070/?page = {$page}");
 
-    }
-    if($action == 'choose-number'){
-        $_SESSION['itemsPerPage'] = $_POST['itemsPerPage'];
-        //$itemsPerPage = $_SESSION['itemsPerPage'];
     }
 }
 else{
     $page = intval($_REQUEST['page_']);
 }
 
-if(isset($_SESSION['itemsPerPage'])){
-    $itemsPerPage = $_SESSION['itemsPerPage'];
-    if($_SESSION['itemsPerPage']=='all'){
-        $itemsPerPage=$numberOfItems;
-    }
-}
-$numberOfPages = ceil($numberOfItems/$itemsPerPage);
 $thisPageFirstResult = ($page-1) * $itemsPerPage;
+
 $listOfTasks = $taskRep->all($userId, $thisPageFirstResult, $itemsPerPage) ;
 include $_SERVER['DOCUMENT_ROOT'] .  '/partials/view_tasklist.php';
-
-
-

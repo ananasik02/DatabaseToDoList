@@ -22,7 +22,10 @@ class Task
         $this->deadline = isset($data['deadline']) ? $data['deadline'] : '';
         $this->completed = isset($data['completed']) ? $data['completed'] : '';
 
-        $TaskRep = new ListRepository(DB::getInstance());
+        $config = require($_SERVER['DOCUMENT_ROOT'] . "/config.php");
+        $config = $config['database'];
+        $db = new DB($config);
+        $TaskRep = new ListRepository($db->getInstance($config));
         $setPM=$TaskRep->findlinks(intval($data['PM']));
         $setPerformer=$TaskRep->findlinks(intval($data['performer']));
         $this->PM = $setPM;

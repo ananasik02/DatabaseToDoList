@@ -6,24 +6,29 @@ use PDO;
 
 class DB{
     private static $instance = null;
-    private $server = 'db';
-    private $database = 'tasklist';
-    private $user = 'root';
-    private $password = 'Vitalik*love23';
+    private $server;
+    private $database;
+    private $user;
+    private $password;
     private $connection;
-    
-    private function __construct()
+
+    public function __construct($config)
     {
+        $this->server = $config['server'];
+        $this->database = $config['name'];
+        $this->user = $config['user'];
+        $this->password = $config['password'];
+
         $this->connection = new PDO("mysql:host=$this->server;port=3306;dbname=$this->database", $this->user, $this->password);
     }
 
-    public static function getInstance()
+    public static function getInstance($config)
     {
         if(self::$instance) {
             return self::$instance;
         }
 
-        return self::$instance = new self();
+        return self::$instance = new self($config);
     }
 
     public function getConnection()
