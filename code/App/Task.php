@@ -1,11 +1,9 @@
 <?php
 
 namespace App;
+
 use App\DB\DB;
 use App\Repositories\ListRepository;
-require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-use Carbon\Carbon;
-use DateTime;
 
 class Task
 {
@@ -29,33 +27,6 @@ class Task
         $this->performer = $setPerformer;
 
         return $this;
-    }
-
-    public function calculateTimeLeft()
-    {
-        $startTime = new DateTime();
-        $finishTime=new DateTime($this->deadline);
-        $timeleft = $startTime->diff($finishTime, true);
-        echo $timeleft->d . "d " . $timeleft->h . "h " . $timeleft ->i . "m ";
-        return $timeleft;
-    }
-
-    public function isCompleted() : string
-    {
-        $attHtml = "";
-
-        if($this->completed==1){
-            $attHtml .= '<p>Yes</p>';
-        }else{
-
-            $attHtml .='<p>No</p>
-                <form action="?action=check-box" method="post">
-                    <input type="checkbox" name="done" value="' . $this->id .
-                ' " />
-                    <input type="submit" name="formSubmit" hidden="true" value=" " </form> ';
-        }
-
-        return $attHtml;
     }
 
     public function toArray(): array
