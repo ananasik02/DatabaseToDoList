@@ -5,7 +5,6 @@ namespace App\Repositories;
 use App\DB\DB;
 use App\User;
 use PDO;
-include  $_SERVER['DOCUMENT_ROOT'] . '/App/User.php';
 
 class UsersRepository
 {
