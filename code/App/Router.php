@@ -1,31 +1,28 @@
 <?php
 
+namespace App;
 class Router
 {
-    protected $routes = [];
+    protected $routes = [
+        '' => 'index.php',
+        '/login' => '/../App/Controllers/login.php',
+        '/signup' => '/../App/Controllers/signup.php',
+        '/check-login' => '/../App/Controllers/check-login.php',
+        'list' => '../App/Controllers/list.php',
+        'create' => '../App/Controllers/create.php',
+        'delete' => '../App/Controllers/delete.php',
+        'update' => '../App/Controllers/update.php',
+        'check-box' => '../App/Controllers/checkbox-form.php'
+    ];
 
-    public static function load($file)
+    public static function get($uri)
     {
         $router = new static;
-
-        require $file;
-
-        return $router;
-    }
-
-    public function define($routes)
-    {
-        $this->routes = $routes;
-    }
-
-    public function direct($uri)
-    {
-        if (array_key_exists($uri, $this->routes)) {
-            //echo "direct function works";
-            //var_dump($this->routes[$uri]);
-            return $this->routes[$uri];
+        if (array_key_exists($uri, $router->routes)) {
+            require $_SERVER['DOCUMENT_ROOT'] . $router->routes[$uri];
+            return 0;
         }
 
-        throw new Exception('No route defined for this URI.');
     }
+
 }

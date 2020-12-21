@@ -1,4 +1,4 @@
-<?php require 'header.php';?>
+<?php require  $_SERVER['DOCUMENT_ROOT'] . '/../partials/header.php';?>
     <div class="container">
         <div class="card">
             <div class="card-body">
@@ -16,7 +16,7 @@
                                     <label for="performer">Password:</label>
                                     <input class="form-control" placeholder="Enter password" id="password" name="password" required></input>
                                 </div>
-                                <button type="submit" class="btn btn-success">Log in</button>
+                                <button type="submit" class="btn btn-success">Signup</button>
                             </form>
 
                         </div>
@@ -26,4 +26,4 @@
         </div>
     </div>
 
-<?php require 'footer.php' ?>
+<?php require  $_SERVER['DOCUMENT_ROOT'] . '/../partials/footer.php' ?>

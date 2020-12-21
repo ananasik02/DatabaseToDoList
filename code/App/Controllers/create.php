@@ -19,5 +19,5 @@ if (isset($_GET['action'])){
     }
 }
 
-require 'partials/task_form.php';
+require '../views/task_form.php';
 ?>
