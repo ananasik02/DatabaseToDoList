@@ -15,7 +15,10 @@ class Router
             'name' => 'App\Controllers\TasksController',
             'method' => 'index'
         ],
-        'list' => '/../App/Controllers/list.php',
+        '/task/create' => [
+            'name' => 'App\Controllers\CreateTaskController',
+            'method' => 'index'
+        ],
         'create' => '../App/Controllers/create.php',
         'delete' => '../App/Controllers/delete.php',
         'update' => '../App/Controllers/update.php',

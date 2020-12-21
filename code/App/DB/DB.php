@@ -7,7 +7,7 @@ use PDO;
 class DB{
     private static $instance = null;
     private $server = 'db';
-    private $database = 'tasklist_db';
+    private $database = 'tasklist';
     private $user = 'root';
     private $password = 'secret';
     private $connection;

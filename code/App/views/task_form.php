@@ -1,27 +1,17 @@
-<?php require 'header.php';
-//echo $pagePath;
-?>
+<?php require  $_SERVER['DOCUMENT_ROOT'] . '/../partials/header.php';?>
     <div class="container">
         <div class="card">
             <div class="card-header">
-        <?php if($pagePath =='/code/App/Actions/create.php') : ?>
-            <h3>Create Task:</h3>
-        <?php endif; ?>
-        <?php if($pagePath =='/code/App/Actions/update.php') : ?>
-            <h3>Update Task:</h3>
-        <?php endif; ?>
+                <h3>Create Task:</h3>
             </div>
             <div class="card-body">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                            <?php if($pagePath =='/code/App/Actions/create.php') : ?>
-                                <form action="?action=save-task" enctype="multipart/form-data" method="POST" class="create-artifact">
-                            <?php endif; ?>
-                            <?php if($pagePath =='/code/App/Actions/update.php') : ?>
-                                <form action="?action=save-updated-task" enctype="multipart/form-data" method="POST" class="create-artifact">
-                            <?php endif; ?>
+
+                            <form action="/create" enctype="multipart/form-data" method="POST">
+
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Enter task" hidden="true" id="task" name="id"  value="<?php if($task_id) echo $task_id ?> " required>
                                 </div>
@@ -37,7 +27,8 @@
                                             <?php foreach ($listOfUsers as $user) : ?>
                                                 <option value="<?php echo $user->login ?>"> <?php  echo $user->login  ?></option>
                                             <?php endforeach; ?>
-                                        </select></p>
+                                        </select>
+                                    </p>
                                 </div>
                                 <div class="form-group">
                                     <label for="performer">Performer:</label>
@@ -46,24 +37,23 @@
                                             <?php foreach ($listOfUsers as $user) : ?>
                                                 <option value="<?php echo $user->login ?>"> <?php  echo $user->login  ?></option>
                                             <?php endforeach; ?>
-                                        </select></p>
+                                        </select>
+                                    </p>
                                 </div>
                                 <div class="form-group">
                                     <label for="price">Deadline:</label>
                                     <input type="date" class="form-control" placeholder="Enter deadline" id="deadline"
                                            name="deadline" required value=" <?php if($currentTask->deadline) echo $currentTask->deadline?>  ">
                                 </div>
-                                <?php if($pagePath =='/code/App/Actions/create.php') : ?>
-                                    <button type="submit" class="btn btn-primary">Create</button>
-                                <?php endif; ?>
-                                <?php if($pagePath =='/code/App/Actions/update.php') : ?>
-                                    <button type="submit" class="btn btn-primary">Update</button>
-                                <?php endif; ?>
+
+                                <button type="submit" class="btn btn-primary">Create</button>
+
                             </form>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<?php require 'footer.php' ?>
+<?php require  $_SERVER['DOCUMENT_ROOT'] . '/../partials/footer.php' ?>

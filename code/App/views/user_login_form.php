@@ -16,7 +16,7 @@
                                     <label for="performer">Password:</label>
                                     <input class="form-control" placeholder="Enter password" id="password" name="password" required></input>
                                 </div>
-                                <button type="submit" class="btn btn-success">Log in</button>
+                                <button type="submit" class="btn btn-success">Log in or Sign up</button>
                             </form>
 
                         </div>

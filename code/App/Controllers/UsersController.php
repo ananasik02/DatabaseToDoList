@@ -51,5 +51,6 @@ class UsersController
         ];
         $UsersCntrl->UsersRep->create($User);
         $_SESSION['user_login'] = $_POST['login'];
+        header("Location: http://php-docker.local:8080/list");
     }
 }

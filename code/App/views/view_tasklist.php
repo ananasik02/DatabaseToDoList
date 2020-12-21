@@ -1,13 +1,13 @@
 <?php require  $_SERVER['DOCUMENT_ROOT'] . '/../partials/header.php';?>
 <div class="container">
     <p>
-    <form style="display: inline-block" action="?action=create-task" method="post">
+    <form style="display: inline-block" action="/task/create" method="post">
         <button class= "btn btn-success">Create Task</button>
     </form>
     </p>
     <p>
             Show
-        <form style="display: inline-block;" action="?action=choose-number" method="post">
+        <form style="display: inline-block;" action="" method="post">
             <button class="btn btn-sm btn btn-light" name="itemsPerPage" value="5">5</button>
         </form>
         <form style="display: inline-block;" action="?action=choose-number" method="post">
