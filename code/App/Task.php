@@ -3,7 +3,7 @@
 namespace App;
 use App\DB\DB;
 use App\Repositories\ListRepository;
-require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+
 use Carbon\Carbon;
 use DateTime;
 

@@ -15,6 +15,15 @@ class UsersController
         $this->UsersRep = new UsersRepository(DB::getInstance());
     }
 
+    public static function index()
+    {
+        if($_POST){
+            UsersController::checkLogin();
+        } else{
+            require $_SERVER['DOCUMENT_ROOT'] . '/../App/views/user_login_form.php';
+        }
+    }
+
     public static function checkLogin()
     {
         $UsersCntrl = new static;
@@ -26,13 +35,13 @@ class UsersController
                 'password' => $password
             ];
             $CurrentUser = new User($UserInfo);
-            echo "i'm logged";
+            header("Location: http://php-docker.local:8080/list");
         }else{
-           UsersController::SignUp();
+           UsersController::createUser();
         }
     }
 
-    public static function SignUp()
+    public static function createUser()
     {
         $UsersCntrl = new static;
         $password = hash('MD5', $_POST['password']);

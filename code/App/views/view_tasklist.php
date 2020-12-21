@@ -1,4 +1,4 @@
-<?php require 'header.php'; ?>
+<?php require  $_SERVER['DOCUMENT_ROOT'] . '/../partials/header.php';?>
 <div class="container">
     <p>
     <form style="display: inline-block" action="?action=create-task" method="post">
@@ -66,4 +66,4 @@
     <?php endfor; ?>
 </div>
 
-<?php require 'footer.php' ?>
+<?php require  $_SERVER['DOCUMENT_ROOT'] . '/../partials/footer.php' ?>
