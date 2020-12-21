@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS tasklist;
+DROP DATABASE IF EXISTS tasklist_db;
 
-CREATE DATABASE tasklist;
+CREATE DATABASE tasklist_db;
 
-USE tasklist;
+USE tasklist_db;
 
 
 CREATE TABLE users

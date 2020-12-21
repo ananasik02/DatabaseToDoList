@@ -7,9 +7,9 @@ use PDO;
 class DB{
     private static $instance = null;
     private $server = 'db';
-    private $database = 'tasklist';
+    private $database = 'tasklist_db';
     private $user = 'root';
-    private $password = 'Vitalik*love23';
+    private $password = 'secret';
     private $connection;
     
     private function __construct()

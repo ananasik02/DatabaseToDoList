@@ -7,7 +7,7 @@
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
 
-                            <form action="/check-login" enctype="multipart/form-data" method="POST">
+                            <form action="/login " enctype="multipart/form-data" method="POST">
                                 <div class="form-group">
                                     <label for="task">Login:</label>
                                     <input class="form-control" placeholder="Enter login" id="login" name="login" required>

@@ -1,10 +1,8 @@
 <?php
-//session_start();
+session_start();
 require  '../vendor/autoload.php';
 
-
-var_dump($_SERVER);
-//require '../App/Controllers/index.php';
+require '../App/Controllers/index.php';
 
 
 
