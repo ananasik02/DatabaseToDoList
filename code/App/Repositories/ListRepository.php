@@ -5,7 +5,7 @@ namespace App\Repositories;
 use App\Task;
 use App\DB\DB;
 use PDO;
-include  $_SERVER['DOCUMENT_ROOT'] . '/App/Task.php';
+
 
 class ListRepository{
     private $db;
@@ -16,11 +16,22 @@ class ListRepository{
         $this->db = $db;
     }
 
-    public function all(){
-        $stmt = $this->db->query("SELECT * FROM {$this->table}");
+    public function all($userId, $startResult, $resultsNumber)
+    {
+        $sql = "SELECT * FROM {$this->table} WHERE performer = {$userId} ||
+            PM = {$userId} LIMIT {$startResult},{$resultsNumber}";
+        $stmt = $this->db->query($sql);
         $tasksData = $stmt->fetchAll();
-        $tasksCollection = $this->mapTasks($tasksData) ;
+        $tasksCollection = $this->mapTasks($tasksData);
         return $tasksCollection;
+
+    }
+
+    public function getRowsCount($userId)
+    {
+        $stmt = $this->db->query("SELECT * FROM {$this->table} WHERE performer = {$userId} || PM = ? ", [$userId]);
+        $number_of_rows = $stmt->rowCount();
+        return $number_of_rows;
     }
 
     public function find(int $id)
@@ -39,11 +50,22 @@ class ListRepository{
 
     public function update(array $newInfo)
     {
-        $stmt = $this->db->query("UPDATE {$this->table} SET task=?, PM={$newInfo['PM']}, 
-                 performer=?, deadline={$newInfo['deadline']}
-                 WHERE id = ? ", [$newInfo['task'], $newInfo['performer'], $newInfo['id']]);
-        return $stmt->fetch(PDO::FETCH_OBJ);
+        $sql = "UPDATE {$this->table} SET task = :task, PM = :PM,
+                 performer = :performer, deadline = :deadline
+                WHERE id={$newInfo['id']}";
+
+        $data = [
+            ':task' => htmlentities($newInfo['task']),
+            ':PM' => $newInfo['PM'],
+            ':performer' => $newInfo['performer'],
+            ':deadline' => htmlentities($newInfo['deadline'])
+
+        ];
+        $this->db->query($sql, $data);
+        //echo "I am here";
+        return $newInfo['id'];
     }
+
 
 
     public function findlinks(int $id)

@@ -5,7 +5,6 @@ namespace App\Repositories;
 use App\DB\DB;
 use App\User;
 use PDO;
-include  $_SERVER['DOCUMENT_ROOT'] . '/App/User.php';
 
 class UsersRepository
 {
@@ -26,8 +25,8 @@ class UsersRepository
 
     public function find($login, $password)
     {
-        $stmt = $this->db->query("SELECT * FROM {$this->table} WHERE login = ? LIMIT 1", [$login]);
-        //var_dump($stmt->fetch(PDO::FETCH_OBJ));
+        $stmt = $this->db->query("SELECT * FROM {$this->table} WHERE login = ? 
+                              && password = ? LIMIT 1", [$login, $password]);
         return $stmt->fetch(PDO::FETCH_OBJ);
     }
 

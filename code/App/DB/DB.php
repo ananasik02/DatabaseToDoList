@@ -9,7 +9,7 @@ class DB{
     private $server = 'db';
     private $database = 'tasklist';
     private $user = 'root';
-    private $password = 'Vitalik*love23';
+    private $password = 'secret';
     private $connection;
     
     private function __construct()

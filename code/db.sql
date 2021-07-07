@@ -1,14 +1,14 @@
-DROP DATABASE IF EXISTS tasklist;
+DROP DATABASE IF EXISTS tasklist_db;
 
-CREATE DATABASE tasklist;
+CREATE DATABASE tasklist_db;
 
-USE tasklist;
+USE tasklist_db;
 
 
 CREATE TABLE users
 (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    login TEXT NOT NULL,
+    login VARCHAR(50),
     password TEXT NOT NULL
 ) ENGINE = InnoDB;
 
@@ -19,8 +19,8 @@ CREATE TABLE tasks
     task TEXT NOT NULL,
     PM INT UNSIGNED,
     performer INT UNSIGNED,
-    deadline TEXT NOT NULL,
-    completed INT UNSIGNED,
+    deadline DATE,
+    completed TINYINT(1),
     INDEX performer_name (performer),
     FOREIGN KEY (performer) REFERENCES users(id)
         ON DELETE CASCADE,
@@ -48,16 +48,21 @@ VALUES
     'Make a todoList with database',
     2,
     1,
-    '2020-13-10',
+    '2020-10-13 ',
     1
 ),
 (
     'Do a lab',
     3,
     2,
-    '2020-15-10',
+    '2020-10-15',
     0
 );
 
-SELECT * FROM users;
 SELECT * FROM tasks;
+
+UPDATE users SET password = MD5(password) WHERE id=1;
+UPDATE users SET password = MD5(password) WHERE id=2;
+UPDATE users SET password = MD5(password) WHERE id=3;
+
+SELECT * FROM users;
